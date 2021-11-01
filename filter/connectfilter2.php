@@ -16,7 +16,7 @@ if(isset($_SESSION['pars'])){
 if(isset($_POST['localhost']) && $_POST['dbname'] !== ''){
 	unset($_SESSION['pars']);
 	$dt->pars($_POST['localhost'],$_POST['dbname'],$_POST['username'],$_POST['pas']);
-	$dt->connect($dbhost,$dbname,$username,$password);
+	$dt->connect($dbhost=$_POST['localhost'],$dbname=$_POST['dbname'],$username=$_POST['username'],$password=$_POST['pas']);
 	$das = $db->query("show tables")->fetchAll(PDO::FETCH_NUM);
 	$tos = [];
 	foreach ($das as $key) {
