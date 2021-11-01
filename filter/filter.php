@@ -5,61 +5,41 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>DB search and xls</title>
-        
-<link rel="stylesheet" href="allz.css">
-  </head>
+		<link rel="stylesheet" href="allz.css">
+  	</head>
     <body class="sb-nav-fixed">
-      <header>
-        
-      </header>
      <main style="padding-top: 100px;">
-       
-                
-                    <div class="container-fluid px-4">
-                        <div class="row">
-                          <div>
-                            <div class="radio__text" style=" color:#6c757d;font-family: 'Rubik', sans-serif;font-size: 0.9rem;padding: 4px;cursor:help" title="1) Для пошуку оберіть потрібну таблицю в селекторі. 2) В селекторі пошуку по категоріях виберіть поля таблиці за якими буде формуватися пошук (ви можете вибрати декілька. Для видалення поля просто клікніть на нього.) Далі буде. далі буде...)."><span class="rus">Рус</span>&nbsp;&nbsp;<span class="ukr">Укр</span>&nbsp;&nbsp;<img class="mod-butt" id="helpmefaq" src="#"></div>
-
-                            <input class="localhost d" type="text" placeholder="host">
-                            <input class="dbname d" type="text" placeholder="dbname">
-                            <input class="username d" type="text" placeholder="username">
-                            <input class="pas d" type="text" placeholder="password">
-                            <button class="basego">base</button>
-
-
-
-                            <h3 class="h3" style="margin:20px 15px 10px 15px;">Choose DB table</h3>
-                            <select id="tabll" name="sx" class="sx sel">
-                             <option>Enter your DB params first</option>
-                            
-                            </select>
-                            
-                          </div>
-                    
-                        <div class="grid-container">
-                        <div class="grid-item">
+        <div class="container px-4">
+            <div class="row">
+              <div>
+                <input class="localhost d" type="text" placeholder="host">
+                <input class="dbname d" type="text" placeholder="dbname">
+                <input class="username d" type="text" placeholder="username">
+                <input class="pas d" type="text" placeholder="password">
+                <button class="basego">base</button>
+                <h3 class="h3" style="margin:20px 15px 10px 15px;">Choose DB table</h3>
+                <select id="tabll" name="sx" class="sx sel">
+                 <option>Enter your DB params first</option>
+                </select>
+              </div>
+                <div class="grid-container">
+                    <div class="grid-item">
                         <div>
                             <h6 class="ccc">Choose name of table cell</h6>
                             <select style="width: 100%;" id="clx" name="clx" class="clx sel"></select>
                             <table style="margin:20px 0 20px 13px;" class="onss2"></table>
                             <select style="width: 100%;" id="ss" name="ss" class="ss sel"></select>
                         </div>
-                        <table style="margin:20px 0 20px 13px;" class="onss1"></table>
-                        </div>
-                  
-                        </div>
-                        
-                        <div style="width:100%;" class="card mb-4">
-                            <div class="card-header tabbl">
-                                
-                            </div>
-                            <div style="overflow-y: auto;width: 100%;" class="card-body" id="client"></div>
-                            
+                    	<table style="margin:20px 0 20px 13px;" class="onss1"></table>
                     </div>
-                    </div>
-                    </div>
-                </main>
-                
+                </div>
+               <div style="width:100%;" class="card mb-4">
+                <div class="card-header tabbl"></div>
+                <div style="overflow-y: auto;width: 100%;" class="card-body" id="client"></div>
+        	  </div>
+            </div>
+        </div>
+    </main>     
         <div id="myModal" class="modal">
           <div class="modal-content">
             <span id="ca" class="close">&times;</span>
@@ -75,8 +55,7 @@
           <div class="modal-content">
             <span id="za" class="close">&times;</span>
             <hr>
-            <h2>XML Сформовано!</h2>
-            
+            <h2>XML file was created!</h2>
           </div>
         </div>
         
