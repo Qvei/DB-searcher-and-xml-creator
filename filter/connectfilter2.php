@@ -39,42 +39,8 @@ if(isset($_POST['selll']) && isset($_POST['tabll'])){
 	echo $asd;
 }
 
-if(isset($_POST['tabll']) && isset($_POST['vals'])){
-	$_SESSION['check'] = [];
-	$_SESSION['table'] = $_POST['tabll'];
-	$_SESSION['cat1'] = $_POST['ca1'];
-	
-		$_SESSION['check'] = $_POST['vals'];
-	
-	
-
-	
-	if(isset($_POST['tabll']) && isset($_POST['vals'])){
-	  	$queryd = "SELECT * FROM ".$_SESSION['table']." WHERE ".$_SESSION['cat1']." IN ('".$_SESSION['check'][0]."','".$_SESSION['check'][1]."','".$_SESSION['check'][2]."')";	
-	}
-
-	$getfiles = $db->query($queryd);
-	$countfiles = $getfiles->rowCount();
-	$gototable = $getfiles->fetchAll(PDO::FETCH_ASSOC);
-	$ge = $db->query("SELECT * FROM ".$_SESSION['table']." LIMIT 1");
-	$fields = array_keys($ge->fetch(PDO::FETCH_ASSOC));
-	if ($gototable) {
-		global $db;
-		foreach($fields as $column_name){
-				$name .= '<th>'.$column_name.'</th>';
-		}
-		foreach ($gototable as $row){
-		    foreach($row as $col_name => $val){
- 				$vallls .='<td>'.$val.'</td>';    
-		     }
-		    $vallls ='<tr>'.$vallls.'</tr>';
-		}
-	}
-
-	$_SESSION['tabldatar'] = '<table class="table table-bordered" cellspacing="0"><caption style="caption-side:top;">'.$countfiles.' matches!</caption><thead><tr>'.$name.'</tr></thead><tbody>'.$vallls.'</tbody></table>';
-	
-	echo $_SESSION['tabldatar'];
-
+if(isset($_POST['tabll']) && isset($_POST['vals']) && isset($_POST['ca1'])){
+	echo $dt->get_dbres($cats = $_POST['ca1'],$vals = $_POST['vals'],$table = $_POST['tabll']);
 }
 
 if(isset($_POST['dawadu'])){
