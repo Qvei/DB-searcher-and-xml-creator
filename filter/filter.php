@@ -18,7 +18,7 @@
                 <div class="grid-container">
                     <div class="grid-item">
                         <div>
-                            <h6 class="ccc">Choose name of table cell</h6>
+                            <h4 class="ccc">Select table columns and values (You can select multiple cols and values, to delete just click on it)</h4>
                             <select style="width: 100%;" id="clx" name="clx" class="clx sel"></select>
                             <table style="margin:20px 0 20px 13px;" class="onss2"></table>
                             <select style="width: 100%;" id="ss" name="ss" class="ss sel"></select>
