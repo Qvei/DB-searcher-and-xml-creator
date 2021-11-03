@@ -8,6 +8,10 @@ class connectClass{
     public $password;
     public $categ;
     public $base;
+    public $check;
+    public $table;
+    public $cats;
+    public $vals;
    
 
 
@@ -33,8 +37,12 @@ class connectClass{
       global $db;
       $this->categ = $categ;
       $this->base = $base;
-    $getcategory = $db->query("SELECT DISTINCT ".$this->categ." FROM ".$this->base);
-      return $getcategory;
+      $getcategory = $db->query("SELECT DISTINCT ".$this->categ." FROM ".$this->base);
+      $asd = [];
+      foreach($getcategory as $f=>$j){ 
+        $asd .= '<option value="'.$j[$categ].'">'.$j[$categ].'</option>';
+      }
+      return $asd;
   }
 
   public function get_cells($base){
@@ -47,6 +55,45 @@ class connectClass{
         $cellsl .='<option value="'.$ed.'">'.$ed.'</option>';
     }
     return $cellsl;
+  }
+
+  public function get_dbres($cats,$vals,$table){
+    global $db;
+    $this->cats = $cats;
+    $this->vals = $vals;
+    $this->table = $table;
+    $queryd = "SELECT * FROM ".$this->table." WHERE ".$this->cats." IN ('".$this->vals[0]."','".$this->vals[1]."','".$this->vals[2]."')";
+    $getfiles = $db->query($queryd);
+      $countfiles = $getfiles->rowCount();
+      $gototable = $getfiles->fetchAll(PDO::FETCH_ASSOC);
+      $ge = $db->query("SELECT * FROM ".$this->table." LIMIT 1");
+      $fields = array_keys($ge->fetch(PDO::FETCH_ASSOC));
+      if ($gototable) {
+        global $db;
+        foreach($fields as $column_name){
+            $name .= '<th>'.$column_name.'</th>';
+        }
+        foreach ($gototable as $row){
+            foreach($row as $col_name => $val){
+            $vallls .='<td>'.$val.'</td>';    
+             }
+            $vallls ='<tr>'.$vallls.'</tr>';
+        }
+      }
+
+      $_SESSION['tabldatar'] = '<table class="table table-bordered" cellspacing="0"><caption style="caption-side:top;">'.$countfiles.' matches!</caption><thead><tr>'.$name.'</tr></thead><tbody>'.$vallls.'</tbody></table>';
+      
+      return $_SESSION['tabldatar'];
+  }
+
+  public function tables(){
+    global $db;
+    $das = $db->query("show tables")->fetchAll(PDO::FETCH_NUM);
+    $tos = [];
+    foreach ($das as $key) {
+      $tos .='<option value="'.$key[0].'">'.$key[0].'</option>';
+    }
+    return $tos;
   }
 
   public function pars($dbhost,$dbname,$username,$pas){
