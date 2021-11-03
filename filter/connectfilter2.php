@@ -28,9 +28,9 @@ if(isset($_POST['tabll']) && isset($_POST['vals']) && isset($_POST['ca1'])){
 }
 
 if(isset($_POST['dawadu'])){
-	$uniqidd = uniqid();
-	$newProject = fopen("NewProject(".$uniqidd.").xls", "w");
+	$newProject = fopen(session_id().".xls", "w");
 	fwrite($newProject, $_SESSION['tabldatar']);
+	echo session_id();
 } 
 
 
