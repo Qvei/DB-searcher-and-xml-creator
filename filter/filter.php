@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>DB search and xls</title>
-		<link rel="stylesheet" href="allz.css">
-  	</head>
+<? ?>
+<html>
     <body class="sb-nav-fixed">
      <main style="padding-top: 100px;">
         <div class="container px-4">
@@ -40,26 +33,7 @@
             </div>
         </div>
     </main>     
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-            <span id="ca" class="close">&times;</span>
-            <hr>
-            <div class="btn-group" role="group" aria-label="Basic example" style="width: 50%;">
-              <button type="button" class="btn btn-secondary rus">eng</button>
-              <button type="button" class="btn btn-secondary ukr">укр</button>
-            </div>
-            <p class="instruction"></p>
-          </div>
-        </div>
-         <div id="myModal2" class="modal">
-          <div class="modal-content">
-            <span id="za" class="close">&times;</span>
-            <hr>
-            <h2>XML file was created!</h2>
-          </div>
-        </div>
-        
-        
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="scripts.js"></script>
   
