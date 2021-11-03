@@ -62,7 +62,12 @@ class connectClass{
     $this->cats = $cats;
     $this->vals = $vals;
     $this->table = $table;
-    $queryd = "SELECT * FROM ".$this->table." WHERE ".$this->cats." IN ('".$this->vals[0]."','".$this->vals[1]."','".$this->vals[2]."')";
+    $queryd = "SELECT * FROM ".$this->table." WHERE ".$this->cats[0]." IN ('".$this->vals[0]."','".$this->vals[1]."','".$this->vals[2]."')";
+    if($this->cats[1]){
+      for($i=1;$i<count($this->cats);$i++){
+        $queryd .= " OR ".$this->cats[$i]." IN ('".$this->vals[0]."','".$this->vals[1]."','".$this->vals[2]."')";
+      }
+    }
     $getfiles = $db->query($queryd);
       $countfiles = $getfiles->rowCount();
       $gototable = $getfiles->fetchAll(PDO::FETCH_ASSOC);
@@ -80,9 +85,7 @@ class connectClass{
             $vallls ='<tr>'.$vallls.'</tr>';
         }
       }
-
       $_SESSION['tabldatar'] = '<table class="table table-bordered" cellspacing="0"><caption style="caption-side:top;">'.$countfiles.' matches!</caption><thead><tr>'.$name.'</tr></thead><tbody>'.$vallls.'</tbody></table>';
-      
       return $_SESSION['tabldatar'];
   }
 
