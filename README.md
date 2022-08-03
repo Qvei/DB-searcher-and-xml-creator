@@ -1,3 +1,5 @@
 # DB-searcher-and-xml-creator
 
-**Working example on [free hosting](http://f0580468.xsph.ru/filter/filter.php)**
+## Simple example of db searcher
+
+**Working example on [free hosting](https://searchdb)**
